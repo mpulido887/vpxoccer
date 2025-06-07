@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>⚽VPSoccerOfficial</title>
+  
+  <!-- Meta SEO y OG (ajusta según necesites) -->
+  <meta name="description" content="VP Soccer — a professional football academy of international standard with a modern approach for children of all ages and skill levels.">
+  <meta name="keywords" content="⚽VPSoccerOfficial Soccer Academy">
+  <meta name="robots" content="index,follow,noodp">
+  <meta property="og:title" content="⚽ VP Soccer">
+  <meta property="og:description" content=" professional football academy of international standard with a modern approach for children of all ages and skill levels.">
+  <meta property="og:image" content="https://assets.goal.com/images/v3/getty-2201476691/crop/MM5DKMBQGQ5DEOBRGU5G433XMU5DAORVGIYQ====/GettyImages-2201476691.jpg?auto=webp&format=pjpg&width=3840&quality=60">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://vpsoccerofficial.com/">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="https://assets.goal.com/images/v3/getty-2201476691/crop/MM5DKMBQGQ5DEOBRGU5G433XMU5DAORVGIYQ====/GettyImages-2201476691.jpg?auto=webp&format=pjpg&width=3840&quality=60" type="image/png">
+  
+  <!-- Fuentes de Google (por ejemplo, Poppins) -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,600&display=swap" rel="stylesheet">
+  
+  
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  
+<!-- HEADER Y MENÚ -->
+<header>
+    <div class="nav-container">
+      <!-- Logo -->
+      <div class="header-logo">
+        <a href="#home">
+          <img src="logo.png" 
+               alt="VP Soccer">
+        </a>
+      </div>
+  
+      <!-- Mensaje (solo para móvil si quieres) -->
+      <div class="header-message">
+        <strong>VP Soccer</strong><br>
+        <span style="font-size:0.8rem;">We are not making a team!<br>We are making players!</span>
+      </div>
+  
+      <!-- Ícono Menú (hamburguesa) -->
+      <div class="menu-toggle" id="menuToggle">
+        <!-- Tres líneas para la hamburguesa -->
+        <span class="line top"></span>
+        <span class="line middle"></span>
+        <span class="line bottom"></span>
+      </div>
+  
+      <!-- Menú escritorio normal -->
+      <nav>
+        <ul id="navList">
+          <li><a href="#about">About</a></li>
+          <li><a href="#programs">Programs</a></li>
+          <li><a href="#team">Our Team</a></li>
+          <li><a href="#timetable">Timetable</a></li>
+          <li><a href="#approach">Approach</a></li>
+          <li><a href="#prices">Prices</a></li>
+          <li><a href="/pro-m-plus">PRO M PLUS</a></li>
+          <li><a href="/contacts">Contacts</a></li>
+        </ul>
+        <div class="lang-options">
+          <a href="?lang=en">En</a>
+          <a href="?lang=ru">Ru</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+  
+  <!-- PANEL MÓVIL (SIDE NAV) -->
+  <div class="mobile-nav-panel" id="mobileNavPanel">
+    <div class="mobile-nav-header">
+      <!-- Logo y Mensaje en la parte superior del panel -->
+      <div class="mobile-nav-logo">
+        <img src="https://assets.goal.com/images/v3/getty-2201476691/crop/MM5DKMBQGQ5DEOBRGU5G433XMU5DAORVGIYQ====/GettyImages-2201476691.jpg?auto=webp&format=pjpg&width=3840&quality=60" 
+             alt="VP Soccer">
+      </div>
+      <div class="mobile-nav-message">
+        <strong>VP Soccer</strong><br>
+        <span>We are not making a team!<br>We are making players!</span>
+      </div>
+      <div class="lang-options-mobile">
+        <a href="?lang=en">EN</a> / <a href="?lang=ru">RU</a>
+      </div>
+    </div>
+  
+    <ul class="mobile-nav-list">
+      <li><a href="#about">ABOUT</a></li>
+      <li><a href="#programs">PROGRAMS</a></li>
+      <li><a href="#team">OUR TEAM</a></li>
+      <li><a href="#timetable">TIMETABLE</a></li>
+      <li><a href="#approach">APPROACH</a></li>
+      <li><a href="#prices">PRICES</a></li>
+      <li><a href="/pro-m-plus">VPSOCCER PLUS</a></li>
+      <li><a href="/contacts">CONTACTS</a></li>
+    </ul>
+  
+    <!-- Botón modal (Sign up for a lesson) -->
+    <button class="btn-signup" onclick="openModal()">Sign up for a Lesson</button>
+  
+    <!-- Botón para llamar -->
+    <a href="tel:+971544651751" class="btn-call">+971 5 44651751</a>
+  
+    <!-- Iconos de redes sociales -->
+    <div class="social-icons">
+      <a href="https://tiktok.com/@promfootballacademy" target="_blank" class="social-icon tiktok">T</a>
+      <a href="https://wa.me/971544651751" target="_blank" class="social-icon whatsapp">W</a>
+      <a href="https://instagram.com/promfootballacademy" target="_blank" class="social-icon instagram">I</a>
+    </div>
+  </div>
+  
+  
+  
+  
+<!-- Modern Hero Section -->
+<section class="modern-hero" id="home">
+    <div class="modern-hero-container">
+      <!-- Side Image 1 -->
+      <img src="img1.JPG" alt="Side Image 1" class="modern-hero-img side-img">
+      <!-- Center Image -->
+      <img src="img2.JPG" alt="Center Image" class="modern-hero-img center-img">
+      <!-- Side Image 2 -->
+      <img src="img3.JPG" alt="Side Image 2" class="modern-hero-img side-img">
+    </div>
+  </section>
+  
+  
+<!-- Sección "ABOUT" con texto diagonal y 6 imágenes en las esquinas -->
+<section id="about">
+    <div class="diagonal-layout">
+      <!-- Contenedor con las 6 imágenes en las esquinas -->
+      <div class="images-container">
+        <!-- Ajusta la URL de cada imagen a la que desees usar -->
+        <img src="https://assets.goal.com/images/v3/getty-2201476691/crop/MM5DKMBQGQ5DEOBRGU5G433XMU5DAORVGIYQ====/GettyImages-2201476691.jpg?auto=webp&format=pjpg&width=3840&quality=60" alt="Corner Image 1" class="corner-img img1">
+        <img src="https://assets.goal.com/images/v3/getty-2201476691/crop/MM5DKMBQGQ5DEOBRGU5G433XMU5DAORVGIYQ====/GettyImages-2201476691.jpg?auto=webp&format=pjpg&width=3840&quality=60" alt="Corner Image 2" class="corner-img img2">
+        <img src="https://assets.goal.com/images/v3/getty-2201476691/crop/MM5DKMBQGQ5DEOBRGU5G433XMU5DAORVGIYQ====/GettyImages-2201476691.jpg?auto=webp&format=pjpg&width=3840&quality=60" alt="Corner Image 3" class="corner-img img3">
+        <img src="https://assets.goal.com/images/v3/getty-2201476691/crop/MM5DKMBQGQ5DEOBRGU5G433XMU5DAORVGIYQ====/GettyImages-2201476691.jpg?auto=webp&format=pjpg&width=3840&quality=60" alt="Corner Image 4" class="corner-img img4">
+        <img src="https://assets.goal.com/images/v3/getty-2201476691/crop/MM5DKMBQGQ5DEOBRGU5G433XMU5DAORVGIYQ====/GettyImages-2201476691.jpg?auto=webp&format=pjpg&width=3840&quality=60" alt="Corner Image 5" class="corner-img img5">
+        <img src="https://assets.goal.com/images/v3/getty-2201476691/crop/MM5DKMBQGQ5DEOBRGU5G433XMU5DAORVGIYQ====/GettyImages-2201476691.jpg?auto=webp&format=pjpg&width=3840&quality=60" alt="Corner Image 6" class="corner-img img6">
+      </div>
+      
+      <!-- Contenido de texto en diagonal -->
+      <div class="text-diagonal">
+        <h2>VP SOCCER</h2>
+        <p>
+          A professional soccer academy of international standard,  
+          with a modern approach designed for children of all ages and levels of ability.
+        </p>
+        <p>
+          Our VP Soccer combines sports traditions with a modern approach,  
+          and our highly qualified coaches are attentive to the needs of young athletes.
+        </p>
+        <p>
+          The methodology of training in great European football:  
+          a modern approach by coaches for children with different levels of training.
+        </p>
+        <a href="#approach" class="btn btn-accent">About Our Philosophy</a>
+        <button class="btn btn-accent" id="openModalBtn">Sign up for a lesson</button>
+
+      </div>
+    </div>
+  </section>
+  <!-- ADVANTAGES / FEATURES SECTION -->
+<section class="academy-features">
+    <div class="features-container">
+      <!-- Feature Box 1 -->
+      <div class="feature-box">
+        <div class="feature-circle">01</div>
+        <h5>High skilled coaching staff</h5>
+        <p>We train children of all ages</p>
+      </div>
+      
+      <!-- Feature Box 2 -->
+      <div class="feature-box">
+        <div class="feature-circle">02</div>
+        <h5>Unique sportsmen training methodology</h5>
+        <p>Analytic and global method</p>
+      </div>
+      
+      <!-- Feature Box 3 -->
+      <div class="feature-box">
+        <div class="feature-circle">03</div>
+        <h5>Individual approach to every child</h5>
+        <p>Identifying and developing the best qualities</p>
+      </div>
+      
+      <!-- Feature Box 4 -->
+      <div class="feature-box">
+        <div class="feature-circle">04</div>
+        <h5>The free education for the most talented</h5>
+        <p>Opportunity to become a professional top level player</p>
+      </div>
+    </div>
+  </section>
+  
+  
+<!-- PROGRAMS SECTION -->
+<section id="programs" class="programs-section">
+    <div class="section-container">
+      <h2 class="section-title">PROGRAMS</h2>
+      
+      <div class="programs-grid">
+        <!-- PROGRAM CARD 1 -->
+        <div class="program-card">
+          <!-- Ícono de "campo de fútbol" en SVG -->
+          <div class="pitch-shape">
+            <svg viewBox="0 0 120 70" xmlns="http://www.w3.org/2000/svg">
+              <!-- Rectángulo contorno -->
+              <rect x="0.5" y="0.5" width="119" height="69" rx="2" ry="2" fill="none" stroke="#fff"/>
+              <!-- Línea central -->
+              <line x1="60" y1="0" x2="60" y2="70" stroke="#fff" stroke-width="1"/>
+              
+              <!-- Círculo central -->
+              <circle cx="60" cy="35" r="8" fill="none" stroke="#fff" stroke-width="1"/>
+            </svg>
+          </div>
+          
+          <!-- Contenido de la tarjeta -->
+          <div class="card-content">
+            <div class="card-top">
+              <span class="icon-user">👤</span>
+              <span class="card-age">U4-U6</span>
+            </div>
+            <h3 class="card-title green-text">PLAY FOR FUN</h3>
+            <p class="card-subtitle">3-5 YEARS OLD</p>
+            <p class="card-subtitle2">Boys | Girls</p>
+            <p class="card-description">
+              Training is designed to increase coordination and raise the game interest.
+            </p>
+          </div>
+          
+          <!-- Barra inferior (verde) con botones en negro -->
+          <div class="card-footer">
+            <button class="footer-btn">MORE</button>
+            <button class="footer-btn">SIGN UP FOR A LESSON</button>
+          </div>
+        </div>
+        
+        <!-- PROGRAM CARD 2 -->
+        <div class="program-card">
+          <div class="pitch-shape">
+            <svg viewBox="0 0 120 70" xmlns="http://www.w3.org/2000/svg">
+              <rect x="0.5" y="0.5" width="119" height="69" rx="2" ry="2" fill="none" stroke="#fff"/>
+              <line x1="60" y1="0" x2="60" y2="70" stroke="#fff" stroke-width="1"/>
+              
+              <circle cx="60" cy="35" r="8" fill="none" stroke="#fff" stroke-width="1"/>
+            </svg>
+          </div>
+          
+          <div class="card-content">
+            <div class="card-top">
+              <span class="icon-user">👤</span>
+              <span class="card-age">U7-U8</span>
+            </div>
+            <h3 class="card-title green-text">PLAY FOR LEARN</h3>
+            <p class="card-subtitle">6-7 YEARS OLD</p>
+            <p class="card-subtitle2">Boys | Girls</p>
+            <p class="card-description">
+              As we do not create a team but focus on developing players based on their strengths.
+            </p>
+          </div>
+          
+          <div class="card-footer">
+            <button class="footer-btn">MORE</button>
+            <button class="footer-btn">SIGN UP FOR A LESSON</button>
+          </div>
+        </div>
+        
+        <!-- PROGRAM CARD 3 -->
+        <div class="program-card">
+          <div class="pitch-shape">
+            <svg viewBox="0 0 120 70" xmlns="http://www.w3.org/2000/svg">
+              <rect x="0.5" y="0.5" width="119" height="69" rx="2" ry="2" fill="none" stroke="#fff"/>
+              <line x1="60" y1="0" x2="60" y2="70" stroke="#fff" stroke-width="1"/>
+              
+              <circle cx="60" cy="35" r="8" fill="none" stroke="#fff" stroke-width="1"/>
+            </svg>
+          </div>
+          
+          <div class="card-content">
+            <div class="card-top">
+              <span class="icon-user">👤</span>
+              <span class="card-age">U9-U11</span>
+            </div>
+            <h3 class="card-title green-text">LEARN IN GAME</h3>
+            <p class="card-subtitle">8-10 YEARS OLD</p>
+            <p class="card-subtitle2">Boys | Girls</p>
+            <p class="card-description">
+              At this stage, players begin to perform more complex tasks, adapting to opponents, and playing in different roles, in a real game mode.
+            </p>
+          </div>
+          
+          <div class="card-footer">
+            <button class="footer-btn">MORE</button>
+            <button class="footer-btn">SIGN UP FOR A LESSON</button>
+          </div>
+        </div>
+        
+        <!-- PROGRAM CARD 4 -->
+        <div class="program-card">
+          <div class="pitch-shape">
+            <svg viewBox="0 0 120 70" xmlns="http://www.w3.org/2000/svg">
+              <rect x="0.5" y="0.5" width="119" height="69" rx="2" ry="2" fill="none" stroke="#fff"/>
+              <line x1="60" y1="0" x2="60" y2="70" stroke="#fff" stroke-width="1"/>
+              
+              <circle cx="60" cy="35" r="8" fill="none" stroke="#fff" stroke-width="1"/>
+            </svg>
+          </div>
+          
+          <div class="card-content">
+            <div class="card-top">
+              <span class="icon-user">👤</span>
+              <span class="card-age">U12-U14</span>
+            </div>
+            <h3 class="card-title green-text">PLAY LIKE A PRO</h3>
+            <p class="card-subtitle">11-13 YEARS OLD</p>
+            <p class="card-subtitle2">Boys | Girls</p>
+            <p class="card-description">
+              The main task is to correctly prepare the player for a professional level.
+            </p>
+          </div>
+          
+          <div class="card-footer">
+            <button class="footer-btn">MORE</button>
+            <button class="footer-btn">SIGN UP FOR A LESSON</button>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+  
+  
+<!-- OUR TEAM SECTION -->
+<section id="team" class="team-section">
+    <h2 class="section-title">OUR TEAM</h2>
+    
+    <!-- Contenedor del carrusel completo -->
+    <div class="carousel-container">
+      <!-- Flecha Izquierda (única para todo el carrusel) -->
+      <button class="carousel-arrow arrow-left" id="prevTeam">&#9664;</button>
+      
+      <!-- Contenedor de slides -->
+      <div class="team-slides">
+        <!-- SLIDE 1 -->
+        <div class="team-slide">
+          <div class="team-content">
+            <div class="team-text">
+              <h3>VALERY PYSHCHYK</h3>
+              <p class="coach-position">FOUNDER / HEAD COACH</p>
+              <ul>
+                <li>UEFA/CONMEBOL/USSF licenses, USC Diplomas and NYU Sports Management Certificate;</li>
+                <li>Professional level – michigan Stars FC, NJ Teamsterz</li>
+                <li>Semi-professional level – Amigos FC NY, Suffolk County FC</li>
+                <li>College level – NYRB, NYCFC, DV7 academy, Sherpa United, Real Madrid programs</li>
+              </ul>
+            </div>
+            <div class="team-image">
+              <img 
+                src="coach.png" 
+                alt="VALERY PYSHCHYK">
+            </div>
+          </div>
+        </div>
+        
+        <!-- SLIDE 2 -->
+        <div class="team-slide">
+          <div class="team-content">
+            <div class="team-text">
+              <h3>MAKSIM YURKIN</h3>
+              <p class="coach-position">COACH</p>
+              <ul>
+                <li>Sport injuries rehabilitation expert;</li>
+                <li>Trainer of professional athletes;</li>
+                <li>9 years of practical experience.</li>
+              </ul>
+            </div>
+            <div class="team-image">
+              <img 
+                src="https://assets.goal.com/images/v3/getty-2201476691/crop/MM5DKMBQGQ5DEOBRGU5G433XMU5DAORVGIYQ====/GettyImages-2201476691.jpg?auto=webp&amp;format=pjpg&amp;width=3840&amp;quality=60" 
+                alt="Maksim Yurkin">
+            </div>
+          </div>
+        </div>
+        
+        <!-- SLIDE 3 -->
+        <div class="team-slide">
+          <div class="team-content">
+            <div class="team-text">
+              <h3>MAKSIM TUMANOV</h3>
+              <p class="coach-position">COACH</p>
+              <ul>
+                <li>Graduate of FC Spartak Moscow academy;</li>
+                <li>UEFA "C" license;</li>
+                <li>Experience with all age groups.</li>
+              </ul>
+            </div>
+            <div class="team-image">
+              <img 
+                src="https://assets.goal.com/images/v3/getty-2201476691/crop/MM5DKMBQGQ5DEOBRGU5G433XMU5DAORVGIYQ====/GettyImages-2201476691.jpg?auto=webp&amp;format=pjpg&amp;width=3840&amp;quality=60" 
+                alt="Maksim Tumanov">
+            </div>
+          </div>
+        </div>
+        
+        <!-- SLIDE 4 -->
+        <div class="team-slide">
+          <div class="team-content">
+            <div class="team-text">
+              <h3>NIKITA GOGOLEV</h3>
+              <p class="coach-position">COACH</p>
+              <ul>
+                <li>FC Sokol Moscow player;</li>
+                <li>Russian 5x5 champion;</li>
+                <li>World Championship participant.</li>
+              </ul>
+            </div>
+            <div class="team-image">
+              <img 
+                src="https://assets.goal.com/images/v3/getty-2201476691/crop/MM5DKMBQGQ5DEOBRGU5G433XMU5DAORVGIYQ====/GettyImages-2201476691.jpg?auto=webp&amp;format=pjpg&amp;width=3840&amp;quality=60" 
+                alt="Nikita Gogolev">
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Flecha Derecha -->
+      <button class="carousel-arrow arrow-right" id="nextTeam">&#9654;</button>
+    </div>
+  </section>
+  
+  <!-- SCRIPT DEL CARRUSEL -->
+  
+  
+    
+  
+<!-- TIMETABLE SECTION -->
+<section id="timetable" class="timetable-section">
+  <h2 class="section-title">TIMETABLE OF CLASSES</h2>
+    <div class="timetable-container">
+      <table class="timetable">
+        <thead>
+          <tr>
+            <th>Groups</th>
+            <th>Mon</th>
+            <th>Tue</th>
+            <th>Wed</th>
+            <th>Thu</th>
+            <th>Fri</th>
+            <th>Sat</th>
+            <th>Sun</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>U3 - U5</td>
+            <td>17:00 - 17:45</td>
+            <td>—</td>
+            <td>17:00 - 17:45</td>
+            <td>—</td>
+            <td>17:00 - 17:45</td>
+            <td>—</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>U6 - U7</td>
+            <td>18:00 - 19:15</td>
+            <td>—</td>
+            <td>18:00 - 19:15</td>
+            <td>—</td>
+            <td>18:00 - 19:15</td>
+            <td>—</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>U8 - U9</td>
+            <td>18:00 - 19:15</td>
+            <td>18:00 - 19:15</td>
+            <td>18:00 - 19:15</td>
+            <td>—</td>
+            <td>18:00 - 19:15</td>
+            <td>—</td>
+            <td>—</td>
+          </tr>
+          <!-- Agrega más filas según necesites -->
+        </tbody>
+      </table>
+    </div>
+  </section>
+  
+  
+<!-- APPROACH SECTION -->
+<section id="approach">
+    <div class="section-container">
+      <h2 class="section-title">VP Soccer Philosophy</h2>
+      
+      <!-- Tarjetas de texto (cuadritos) -->
+      <div class="approach-cards">
+        <!-- Tarjeta 1 -->
+        <div class="approach-card">
+          <p>
+            Rest assured—we never claim that your child isn’t a perfect fit for our program. Every child is unique and develops on their own timetable. We assess all individual skills and design a comprehensive training regimen that spans from physical strength to emotional and mental resilience.
+          </p>
+        </div>
+        <!-- Tarjeta 2 -->
+        <div class="approach-card">
+          <p>
+            At VPSOCCER Academy, your child dives into the realm of the greatest sport ever devised. We steer emerging talent in the proper direction, kindle a lasting passion for football, and empower them to set ambitious targets and see them through.
+          </p>
+        </div>
+        <!-- Tarjeta 3 -->
+        <div class="approach-card">
+          <p>
+            Why is this so crucial? Our elite coaching and management team—comprising world-class professionals with extensive international experience—employs an individualized approach, teaching not only the technical aspects but also instilling a genuine love for football. Our ultimate success is reflected when our graduates shine in professional lineups around the globe.
+          </p>
+        </div>
+      </div>
+      
+      <!-- Galería de imágenes en carousel -->
+      <div class="approach-carousel">
+        <!-- Flecha Izquierda -->
+        <button class="carousel-arrow approach-prev">&#9664;</button>
+        
+        <!-- Contenedor visible del carousel -->
+        <div class="approach-gallery">
+          <!-- Track de imágenes (flex container) -->
+          <div class="gallery-track">
+            <img src="https://assets.goal.com/images/v3/getty-2201476691/crop/MM5DKMBQGQ5DEOBRGU5G433XMU5DAORVGIYQ====/GettyImages-2201476691.jpg?auto=webp&format=pjpg&width=3840&quality=60" alt="Approach Image 1">
+            <img src="https://assets.goal.com/images/v3/getty-2201476691/crop/MM5DKMBQGQ5DEOBRGU5G433XMU5DAORVGIYQ====/GettyImages-2201476691.jpg?auto=webp&format=pjpg&width=3840&quality=60" alt="Approach Image 2">
+            <img src="https://assets.goal.com/images/v3/getty-2201476691/crop/MM5DKMBQGQ5DEOBRGU5G433XMU5DAORVGIYQ====/GettyImages-2201476691.jpg?auto=webp&format=pjpg&width=3840&quality=60" alt="Approach Image 3">
+            <img src="https://assets.goal.com/images/v3/getty-2201476691/crop/MM5DKMBQGQ5DEOBRGU5G433XMU5DAORVGIYQ====/GettyImages-2201476691.jpg?auto=webp&format=pjpg&width=3840&quality=60" alt="Approach Image 4">
+            <img src="https://assets.goal.com/images/v3/getty-2201476691/crop/MM5DKMBQGQ5DEOBRGU5G433XMU5DAORVGIYQ====/GettyImages-2201476691.jpg?auto=webp&format=pjpg&width=3840&quality=60" alt="Approach Image 5">
+          </div>
+        </div>
+        
+        <!-- Flecha Derecha -->
+        <button class="carousel-arrow approach-next">&#9654;</button>
+      </div>
+    </div>
+  </section>
+  
+  
+  <!-- SCRIPT PARA EL CARRUSEL DE IMÁGENES -->
+  
+  
+  
+<!-- PRICES SECTION -->
+<section id="prices" class="prices-section">
+    <div class="section-container">
+      <h2 class="section-title">Tuition Fees</h2>
+      
+      <div class="prices-grid">
+        <!-- Price Card 1 -->
+        <div class="price-card">
+          <h5>Group Classes</h5>
+          <table class="price-table">
+            <thead>
+              <tr>
+                <th>1 month</th>
+                <th>3 months</th>
+                <th>6 months</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  1400 AED <br>
+                  <small>3 days/week</small>
+                </td>
+                <td>3600 AED</td>
+                <td>6500 AED</td>
+              </tr>
+              <tr>
+                <td>
+                  1700 AED <br>
+                  <small>4 days/week</small>
+                </td>
+                <td>4600 AED</td>
+                <td>8200 AED</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <!-- Price Card 2 -->
+        <div class="price-card">
+          <h5>Individual Training</h5>
+          <table class="price-table">
+            <tbody>
+              <tr>
+                <td>10 classes/month</td>
+                <td>3000 AED</td>
+              </tr>
+              <tr>
+                <td>20 classes/month</td>
+                <td>5500 AED</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <!-- Price Card 3 -->
+        <div class="price-card">
+          <h5>Other</h5>
+          <table class="price-table">
+            <tbody>
+              <tr>
+                <td>Set of uniforms</td>
+                <td>250 AED</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <!-- Price Card 4 -->
+        <div class="price-card">
+          <h5>Stocks</h5>
+          <ul>
+            <li>The first workout is free!</li>
+            <li>Bring a friend → 10% off next subscription!</li>
+          </ul>
+        </div>
+      </div>
+      
+      <p class="vat-note">* The above prices exclusive of VAT</p>
+    </div>
+  </section>
+  
+  
+<!-- CALL TO ACTION / FINAL SECTION -->
+<section class="cta-section">
+    <div class="section-container">
+      <h2>VP Soccer</h2>
+      <p class="fw-bold">Let's bring up a new champion</p>
+      <button class="btn" onclick="openModal()">Sign up for a lesson</button>
+      
+      <!-- Contenedor de la pelota, grupo y crack -->
+      <div class="ball-container" id="ballContainer">
+        <div class="ball-group">
+          <img src="pelota.png" alt="Soccer Ball" class="ball" />
+          <div class="hitme-text">Hit me!</div>
+        </div>
+        <img src="crack.png" alt="Crack" class="crack" />
+      </div>
+    </div>
+  </section>
+  
+  
+  
+  
+  
+  
+  <!-- FOOTER -->
+  <footer>
+    <div class="section-container">
+      <p>
+        <a href="https://tiktok.com/@promfootballacademy" target="_blank">Our TikTok channel</a> |
+        <a href="https://wa.me/971544651751" target="_blank">Write to us in WhatsApp</a> |
+        <a href="https://instagram.com/promfootballacademy" target="_blank">Our page via Instagram</a>
+      </p>
+      <p style="margin-top:10px;"><a href="/contacts#docs">Documents</a></p>
+      <p style="margin-top:10px;">2022-2025 &copy; Football Pro Academy</p>
+    </div>
+  </footer>
+  
+  <!-- MODAL DE INSCRIPCIÓN -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <span class="modal-close" id="modalClose">&times;</span>
+      <h3>Sign up for the first training session</h3>
+      <p>Fill out the form below for your free trial workout:</p>
+      <form id="signupForm">
+        <div class="form-group">
+          <label for="fullName">Your full name *</label>
+          <input type="text" id="fullName" name="fullName" placeholder="John Smith" required>
+        </div>
+        <div class="form-group">
+          <label for="childName">Child's full name *</label>
+          <input type="text" id="childName" name="childName" placeholder="James Smith" required>
+        </div>
+        <div class="form-group">
+          <label>Age of the child *</label>
+          <div class="radio-group">
+            <label><input type="radio" name="childAge" value="3-5" required> 3-5</label>
+            <label><input type="radio" name="childAge" value="6-7" required> 6-7</label>
+            <label><input type="radio" name="childAge" value="8-10" required> 8-10</label>
+            <label><input type="radio" name="childAge" value="11-13" required> 11-13</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Child's gender *</label>
+          <div class="radio-group">
+            <label><input type="radio" name="childGender" value="boy" required> Boy</label>
+            <label><input type="radio" name="childGender" value="girl" required> Girl</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone *</label>
+          <input type="tel" id="phone" name="phone" placeholder="+971 0 00000000" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" placeholder="example@mail.com" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Comment</label>
+          <textarea id="message" name="message" rows="3" placeholder="Your message"></textarea>
+        </div>
+        <p style="font-size:0.8rem; margin-bottom:10px;">
+          By submitting, you consent to the processing of your personal data.
+        </p>
+        <button type="submit">Send a request</button>
+      </form>
+    </div>
+  </div>
+  
+  <!-- JAVASCRIPT -->
+  
+  
+  <script src="js/main.js"></script>
+</body>
+</html>
