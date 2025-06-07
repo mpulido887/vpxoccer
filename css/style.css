@@ -1,45 +1,1536 @@
-body {
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
+/* Variables de color y fuente */
+    :root {
+      --primary-bg: #000; /* Fondo negro */
+      --secondary-bg: #000; /* Fondo negro para secciones */
+      --accent-color: #f2f1f1; /* Rojo para títulos y header */
+      --text-color: #fff; /* Texto blanco */
+      --light-gray: #f5f5f5;
+      --font-family: 'Poppins', sans-serif;
+    }
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: var(--font-family);
+      color: var(--text-color);
+      background: #000;
+      line-height: 1.6;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+    
+    /* -------------------------------
+   HEADER Y MENÚ (GENERAL)
+------------------------------- */
+/* HEADER GENERAL */
+header {
+  background: #3a3838;
+  color: var(--accent-color);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 10px 20px;
+}
+.nav-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-header {
+/* Logo del header */
+.header-logo img {
+  height: 50px;
+}
+
+/* Mensaje central (se podría ocultar en escritorio si prefieres) */
+.header-message {
+  display: none; /* Dejarlo hidden en desktop por defecto, se mostrará en móvil */
+  text-align: center;
+  flex: 1;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+/* Menú escritorio */
+nav {
+  display: flex;
+  align-items: center;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+nav ul li { 
+  margin: 0 10px;
+}
+nav ul li a {
+  color: var(--accent-color);
+  padding: 8px 12px;
+  transition: background 0.3s;
+}
+nav ul li a:hover {
+  background: rgba(255,255,255,0.2);
+  border-radius: 4px;
+}
+
+/* Opciones de idioma (escritorio) */
+.lang-options {
+  display: flex;
+  margin-left: 20px;
+}
+.lang-options a {
+  margin-left: 10px;
+  font-weight: 600;
+  color: var(--accent-color);
+}
+
+/* MENÚ HAMBURGUESA */
+.menu-toggle {
+  display: none; /* Por defecto oculto en escritorio */
+  cursor: pointer;
+  width: 30px;
+  height: 24px;
+  position: relative;
+}
+.menu-toggle .line {
+  background: var(--accent-color);
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  transition: 0.4s;
+}
+.menu-toggle .top {
+  top: 0;
+}
+.menu-toggle .middle {
+  top: 50%;
+  transform: translateY(-50%);
+}
+.menu-toggle .bottom {
+  bottom: 0;
+}
+.menu-toggle.open .top {
+  transform: translateY(11px) rotate(45deg);
+}
+.menu-toggle.open .middle {
+  opacity: 0;
+}
+.menu-toggle.open .bottom {
+  transform: translateY(-11px) rotate(-45deg);
+}
+
+/* SIDE NAV (mobile panel) */
+.mobile-nav-panel {
+  position: fixed;
+  top: 0;
+  left: -100%; /* Se oculta fuera de pantalla */
+  width: 280px;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(6px);
+  transition: left 0.4s ease;
+  z-index: 2000;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Estado abierto */
+.mobile-nav-panel.open {
+  left: 0;
+}
+
+/* Header del panel (logo y mensaje) */
+.mobile-nav-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+.mobile-nav-logo img {
+  width: 60px;
+  margin-bottom: 10px;
+}
+.mobile-nav-message {
+  color: #fff;
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+  line-height: 1.3;
+}
+.lang-options-mobile {
+  font-size: 0.8rem;
+  margin-top: 5px;
+}
+.lang-options-mobile a {
+  color: #fff;
+  margin: 0 3px;
+}
+
+/* Lista de enlaces */
+.mobile-nav-list {
+  list-style: none;
+  margin: 20px 0;
+  padding: 0;
+}
+.mobile-nav-list li {
+  margin-bottom: 10px;
+}
+.mobile-nav-list li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+.mobile-nav-list li a:hover {
+  color: var(--accent-color);
+}
+
+/* Botón para abrir modal */
+.btn-signup {
+  display: block;
+  width: 100%;
+  background: var(--accent-color);
+  color: #fff;
+  border: none;
+  text-align: center;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* Botón llamar */
+.btn-call {
+  display: block;
+  text-align: center;
   background: #333;
   color: #fff;
   padding: 10px;
+  margin-top: 10px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
 }
 
-.nav-container {
+/* Iconos de redes */
+.social-icons {
+  display: flex;
+  margin-top: 15px;
+}
+.social-icon {
+  text-decoration: none;
+  color: #fff;
+  margin-right: 15px;
+  font-size: 1.4rem; /* Hazlo grande para simular icono */
+  font-weight: 700;
+}
+.tiktok::before {
+  content: 'T'; /* Reemplaza con icono Tiktok real (FontAwesome, etc.) */
+}
+.whatsapp::before {
+  content: 'W';
+}
+.instagram::before {
+  content: 'I';
+}
+
+/* -------------------------------
+   VERSION MÓVIL
+------------------------------- */
+@media (max-width: 768px) {
+  /* Se oculta el menú horizontal y se muestra el hamburguesa */
+  nav {
+    display: none;
+  }
+  .menu-toggle {
+    display: block;
+  }
+  .header-message {
+    display: block;
+  }
+}
+
+
+
+    
+    /* -------------------------------
+       HERO
+    ------------------------------- */
+    .hero {
+      background: url('https://assets.goal.com/images/v3/getty-2201476691/crop/MM5DKMBQGQ5DEOBRGU5G433XMU5DAORVGIYQ====/GettyImages-2201476691.jpg?auto=webp&format=pjpg&width=3840&quality=60') center/cover no-repeat;
+      color: var(--text-color);
+      height: 60vh;
+      min-height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+      color: var(--accent-color);
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+    }
+    .btn {
+      padding: 10px 20px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .btn-accent {
+      background: var(--accent-color);
+      color: var(--text-color);
+    }
+    .btn-accent:hover { background: darkred; }
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--accent-color);
+      color: var(--accent-color);
+    }
+    .btn-outline:hover {
+      background: var(--accent-color);
+      color: var(--text-color);
+    }
+    
+    /* -------------------------------
+       SECCIONES GENERALES
+    ------------------------------- */
+    section {
+      padding: 60px 20px;
+      background: var(--secondary-bg);
+    }
+    .section-container {
+      max-width: 1200px;
+      margin: auto;
+    }
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 40px;
+      text-align: center;
+      color: var(--accent-color);
+    }
+    
+    /* ABOUT */
+    .about-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      align-items: center;
+    }
+    .about-text {
+      font-size: 1.1rem;
+      font-weight: 600;
+      line-height: 1.5;
+    }
+    .about-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px;
+      margin-top: 30px;
+    }
+    .about-gallery img { border-radius: 4px; }
+    .advantages {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+      text-align: center;
+    }
+    .advantages h5 { margin-bottom: 10px; font-weight: 600; }
+    
+    /* PROGRAMS */
+    .programs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .program-card {
+      border: 1px solid #444;
+      border-radius: 6px;
+      padding: 20px;
+      transition: transform 0.3s;
+      background: #000;
+    }
+    .program-card:hover { transform: translateY(-5px); }
+    .program-card h4 { margin-bottom: 10px; font-weight: 600; color: var(--accent-color); }
+    .program-card p { font-size: 0.9rem; margin-bottom: 15px; }
+    
+/*************************************
+   SECCIÓN OUR TEAM
+**************************************/
+.team-section {
+  width: 100%;
+  background: #000;
+  color: #fff;
+  padding: 40px 0;
+  box-sizing: border-box;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+/*************************************
+   CONTENEDOR DEL CARRUSEL
+**************************************/
+.carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px; /* Si deseas centrarlo en pantallas muy grandes */
+  margin: 0 auto;
+  padding-top: 60px; /* Espacio para que las flechas no tapen el contenido */
+  box-sizing: border-box;
+}
+
+/*************************************
+   FLECHAS DEL CARRUSEL
+   (Se colocan fuera del contenido de la ficha)
+**************************************/
+.carousel-arrow {
+  position: absolute;
+  top: 10px; /* Ubicación arriba, fuera del contenido de la ficha */
+  background: rgba(0,0,0,0.7);
+  border: 2px solid #28a745;
+  color: #28a745;
+  width: 46px;
+  height: 46px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition: background 0.2s, color 0.2s;
+}
+
+.carousel-arrow:hover {
+  background: #28a745;
+  color: #fff;
+}
+
+.arrow-left {
+  left: 20px;
+}
+
+.arrow-right {
+  right: 20px;
+}
+
+/*************************************
+   CONTENEDOR DE SLIDES
+**************************************/
+.team-slides {
+  width: 100%;
+  min-height: 350px;
+}
+
+/*************************************
+   CADA SLIDE (Ficha)
+**************************************/
+.team-slide {
+  display: none; /* Solo se muestra el activo */
+  width: 100%;
+  background: #13151b;
+  border: 1px solid #444;
+  border-radius: 8px;
+  box-sizing: border-box;
+  padding: 20px 30px;
+  margin-bottom: 20px;
+}
+
+/* Contenedor interno para dividir en dos columnas */
+.team-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 20px;
 }
 
-.modal-overlay {
+/* Versión escritorio: texto a la izquierda, imagen a la derecha */
+.team-text {
+  flex: 1;
+  text-align: left;
+  font-size: 1.05rem; /* Texto algo más grande */
+  line-height: 1.5;
+}
+
+.team-text h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+}
+
+.coach-position {
+  color: #28a745;
+  font-weight: 700;
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+}
+
+.team-text ul {
+  list-style: disc;
+  margin: 0 0 0 20px;
+  padding: 0;
+  color: #ccc;
+}
+
+/* Contenedor para la imagen */
+.team-image {
+  flex-shrink: 0;
+}
+
+.team-image img {
+  max-height: 320px;
+  width: auto;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/*************************************
+   RESPONSIVE (MÓVIL)
+**************************************/
+@media (max-width: 768px) {
+  .carousel-container {
+    padding-top: 40px;
+  }
+  .section-title {
+    font-size: 1.6rem;
+  }
+  .team-slide {
+    padding: 15px 20px;
+  }
+  .team-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .team-text {
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+    text-align: left;
+  }
+  .team-text h3 {
+    font-size: 1.4rem;
+  }
+  .coach-position {
+    font-size: 1rem;
+  }
+  .team-image img {
+    max-height: 260px;
+    margin-top: 15px;
+  }
+  .carousel-arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+  .arrow-left {
+    left: 10px;
+  }
+  .arrow-right {
+    right: 10px;
+  }
+}
+
+    
+/* TIMETABLE SECTION CON BACKGROUND IMAGE */
+.timetable-section {
+  position: relative;
+  width: 100%;
+  padding: 40px 20px;
+  /* Cambia la URL de la imagen a la que desees usar */
+  background: url('https://t3.ftcdn.net/jpg/02/48/65/38/240_F_248653851_lMw1RUwPLpaBsSCT31eE3ZDY8WkIFpiq.jpg') center/cover no-repeat;
+  box-sizing: border-box;
+}
+
+/* Contenedor para la tabla con fondo semitransparente para legibilidad */
+.timetable-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.7);  /* Fondo oscuro semitransparente */
+  border-radius: 8px;
+  overflow-x: auto;  /* Permite scroll horizontal en pantallas pequeñas */
+}
+
+/* Estilos de la tabla */
+.timetable {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  color: #fff;  /* Texto en blanco para contraste */
+}
+
+.timetable th,
+.timetable td {
+  border: 1px solid #444;
+  padding: 10px;
+  font-size: 0.9rem;
+}
+
+.timetable thead th {
+  background: #222;
+  font-weight: 600;
+  color: var(--accent-color); /* Asegúrate de definir la variable --accent-color */
+}
+
+/* Responsivo: Ajustes para móviles */
+@media (max-width: 768px) {
+  .timetable-container {
+    padding: 15px;
+  }
+  .timetable th,
+  .timetable td {
+    padding: 8px;
+    font-size: 0.8rem;
+  }
+}
+
+    /* APPROACH */
+ /* CONTENEDOR GENERAL DE LA SECCIÓN */
+.section-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* TÍTULO */
+.section-title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+/* TARJETAS DE TEXTO (CUADRITOS) */
+.approach-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.approach-card {
+  background: #13151b;
+  padding: 20px;
+  border: 1px solid #444;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* GALERÍA TIPO CAROUSEL */
+.approach-carousel {
+  position: relative;
+  margin-top: 30px;
+}
+
+/* Contenedor visible de la galería */
+.approach-gallery {
+  overflow: hidden;
+  width: 100%;
+  /* Fijamos la altura si es necesario (opcional) */
+  /* min-height: 200px; */
+}
+
+/* Track de imágenes (display flex) */
+.gallery-track {
+  display: flex;
+  transition: transform 0.3s ease;
+  gap: 10px;
+}
+
+/* Cada imagen ocupa el 33.33% de la anchura para que se muestren 3 */
+.gallery-track img {
+  flex: 0 0 33.33%;
+  max-width: 33.33%;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+/* FLECHAS DE NAVEGACIÓN */
+.carousel-arrow {
+  position: absolute;
+  top: 10px;  /* Ubicadas en la parte superior del carousel */
+  background: rgba(0, 0, 0, 0.7);
+  border: 2px solid #28a745;
+  color: #28a745;
+  width: 36px;
+  height: 36px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition: background 0.2s, color 0.2s;
+}
+
+.carousel-arrow:hover {
+  background: #28a745;
+  color: #fff;
+}
+
+.approach-prev {
+  left: 10px;
+}
+
+.approach-next {
+  right: 10px;
+}
+
+/* RESPONSIVE: ajuste para móviles */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.6rem;
+  }
+  .approach-card {
+    font-size: 0.95rem;
+    padding: 15px;
+  }
+  .carousel-arrow {
+    width: 32px;
+    height: 32px;
+    font-size: 1.2rem;
+  }
+  @media (max-width: 768px) {
+  .gallery-track img {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+}
+    
+/***************************************
+  PRICES SECTION
+***************************************/
+.prices-section {
+  background: #0f1015;     /* Fondo oscuro (ajusta a tu gusto) */
+  padding: 60px 20px;
+  color: #fff;             /* Texto en blanco */
+  box-sizing: border-box;
+}
+
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+/* GRID para las tarjetas */
+.prices-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/***************************************
+  PRICE CARDS
+***************************************/
+.price-card {
+  background: #13151b;
+  border: 1px solid #444;
+  border-radius: 6px;
+  padding: 20px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.price-card h5 {
+  text-align: center;
+  margin-bottom: 15px;
+  font-weight: 600;
+  color: #28a745; /* Color de acento */
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  border-bottom: 1px solid #444; 
+  padding-bottom: 10px;
+}
+
+/***************************************
+  PRICE TABLE
+***************************************/
+.price-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.price-table thead th {
+  background: #1b1f24;
+  color: #28a745;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  padding: 10px;
+  border: 1px solid #444;
+}
+
+.price-table th,
+.price-table td {
+  border: 1px solid #444;
+  padding: 10px;
+  font-size: 0.85rem;
+  text-align: left;  /* Alineado a la izquierda para un look moderno */
+  position: relative; 
+  color: #ddd;
+}
+
+/* Pseudo-elemento flecha (opcional). 
+   Solo en la primera columna, por ejemplo. 
+*/
+.price-table td:first-child::after {
+  content: '➔';
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #28a745;
+  font-size: 0.9rem;
+}
+
+/* Ajuste: si no quieres flechas en celdas vacías, 
+   quita pseudo-elementos en celdas vacías o añade condiciones 
+*/
+
+/* Subtexto (ej. 3 days/week) */
+.price-table td small {
+  display: block;
+  font-size: 0.75rem;
+  color: #888; 
+  margin-top: 4px;
+}
+
+/***************************************
+  OTHER LISTS (STOCKS, ETC.)
+***************************************/
+.price-card ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+.price-card ul li {
+  margin-bottom: 8px;
+  position: relative;
+  padding-left: 18px;
+}
+
+/* Punto verde como viñeta (opcional) */
+.price-card ul li::before {
+  content: '•';
+  color: #28a745; 
+  position: absolute;
+  left: 0;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+/***************************************
+  NOTA DE IVA
+***************************************/
+.vat-note {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.85rem;
+  color: #aaa;
+}
+
+/***************************************
+  RESPONSIVE
+***************************************/
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.6rem;
+  }
+  .price-card {
+    padding: 15px;
+  }
+  .price-table th,
+  .price-table td {
+    font-size: 0.8rem;
+    padding: 8px;
+  }
+  .vat-note {
+    font-size: 0.8rem;
+  }
+}
+
+    /* ============================
+   CTA SECTION CON FONDO DE CANCHA
+============================ */
+.cta-section {
+  position: relative;
+  text-align: center;
+  padding: 60px 20px;
+  background: url("cancha.png") center/cover no-repeat; /* Imagen de la cancha */
+  box-sizing: border-box;
+}
+
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  color: #fff;
+  position: relative;
+}
+
+.cta-section h2 {
+  margin-bottom: 15px;
+  font-weight: 600;
+  font-size: 2rem;
+  color: black;
+}
+
+.fw-bold {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: black;
+}
+
+.btn {
+  padding: 10px 20px;
+  background: #ff0000;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+/* ============================
+   CONTENEDOR DE LA PELOTA Y GRUPO
+============================ */
+.ball-container {
+  position: relative;
+  width: 200px;    /* Contenedor mayor para permitir pequeños movimientos */
+  height: 200px;
+  margin: 40px auto;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+/* Agrupamos la pelota y el texto para que se muevan juntos */
+.ball-group {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  /* Posición inicial centrada dentro del contenedor (200px /2 – 60px = 40px) */
+  left: 40px;
+  top: 40px;
+  transition: all 0.8s ease;
+}
+
+/* La pelota */
+.ball {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  display: block;
+}
+
+/* Texto "Hit me!" posicionado a la derecha del balón */
+.hitme-text {
+  position: absolute;
+  left: 130px; /* 120px de la pelota más 10px de espacio */
+  top: 50%;    /* Centrado verticalmente respecto al balón */
+  transform: translateY(-50%);
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ff0; /* Color para resaltar, ajústalo según tu diseño */
+  animation: pulse 1s infinite; /* Animación continua para llamar la atención */
+}
+
+/* Animación de pulse para el texto */
+@keyframes pulse {
+  0%, 100% { transform: translateY(-50%) scale(1); }
+  50% { transform: translateY(-50%) scale(1.2); }
+}
+
+/* Overlay del crack: se posiciona fixed para cubrir toda la pantalla */
+.crack {
   position: fixed;
   top: 0;
   left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  display: none; /* Se muestra en el tercer golpe */
+  opacity: 0;
+  transition: opacity 0.1s ease;
+  z-index: 999;
+}
+
+/* ============================
+   ANIMACIONES
+============================ */
+/* Rebote leve: movimiento reducido (entre -5 y +5 px) */
+@keyframes bounceSmall {
+  0%   { transform: translate(0, 0); }
+  20%  { transform: translate(-5px, -5px); }
+  40%  { transform: translate(5px, 5px); }
+  60%  { transform: translate(-3px, -3px); }
+  80%  { transform: translate(3px, 3px); }
+  100% { transform: translate(0, 0); }
+}
+.bounce {
+  animation: bounceSmall 0.2s ease forwards;
+}
+
+/* Animación final: la pelota y grupo "saltan" hacia la pantalla */
+@keyframes jumpToScreen {
+  0% { transform: translate(0, 0) scale(1) rotate(0deg); opacity: 1; }
+  100% { transform: translate(0, -100px) scale(2) rotate(15deg); opacity: 0; }
+}
+.final-hit {
+  animation: jumpToScreen 0.8s ease forwards;
+}
+
+/* Animación para el texto "Hit me!" (se aplica a .jump, aunque además hay animación de pulse ya constante) */
+@keyframes jump {
+  0%, 100% { transform: translateY(-50%); }
+  50% { transform: translateY(-65%); }
+}
+.jump {
+  animation: jump 0.4s ease;
+}
+
+/* ============================
+   RESPONSIVE
+============================ */
+@media (max-width: 768px) {
+  .ball-container { width: 200px; height: 150px; }
+  .ball-group { width: 100px; height: 100px; left: calc(50% - 50px); top: calc(50% - 50px); }
+  .ball { width: 100px; height: 100px; }
+  .hitme-text { left: 105px; font-size: 0.9rem; }
+}
+
+
+
+
+
+
+    /* FOOTER */
+    footer {
+      background: var(--primary-bg);
+      color: var(--text-color);
+      text-align: center;
+      padding: 40px 20px;
+    }
+    footer a {
+      color: var(--text-color);
+      margin: 0 10px;
+      transition: color 0.3s;
+    }
+    footer a:hover { color: var(--accent-color); }
+    
+    /* MODAL DE INSCRIPCIÓN */
+    .modal-overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.5);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+    }
+    .modal {
+      background: #000;
+      color: var(--text-color);
+      width: 90%;
+      max-width: 600px;
+      border-radius: 8px;
+      padding: 20px;
+      position: relative;
+    }
+    .modal-close {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    .modal h3 { margin-bottom: 15px; color: var(--accent-color); }
+    .modal form .form-group { margin-bottom: 15px; }
+    .modal form label { display: block; margin-bottom: 5px; font-weight: 600; }
+    .modal form input,
+    .modal form textarea {
+      width: 100%;
+      padding: 8px 10px;
+      border: 1px solid #555;
+      border-radius: 4px;
+      background: #111;
+      color: var(--text-color);
+    }
+    .modal form .radio-group label {
+      display: inline-block;
+      margin-right: 15px;
+      font-weight: normal;
+    }
+    .modal form button[type="submit"] {
+      background: var(--accent-color);
+      color: var(--text-color);
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .modal form button[type="submit"]:hover { background: darkred; }
+    
+    /* -------------------------------
+       RESPONSIVIDAD EXTRA
+    ------------------------------- */
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 2.5rem; }
+      .hero p { font-size: 1rem; }
+    }
+
+    /* Contenedor principal de la sección diagonal */
+.diagonal-layout {
+  position: relative;           /* Para posicionar elementos absolutos dentro */
+  width: 100%;
+  min-height: 600px;           /* Ajusta según tu gusto */
+  overflow: hidden;
+  padding: 20px;               /* Espacio interno para no pegar el texto a los bordes */
+  box-sizing: border-box;
+  display: flex;               /* Opción para centrar contenido */
+  justify-content: center;     /* Centrar horizontal */
+  align-items: center;         /* Centrar vertical */
+}
+
+/* Contenedor de imágenes en las esquinas */
+.images-container {
+  position: absolute;
+  top: 0; 
+  left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  display: none;
+}
+
+/* Estilo general para las imágenes */
+.corner-img {
+  position: absolute;
+  width: 200px;      /* Ajusta tamaño según tu diseño */
+  height: 200px;     /* Ajusta tamaño según tu diseño */
+  object-fit: cover; /* Que la imagen se recorte para encajar */
+  border-radius: 8px;
+}
+
+/* Posiciones de las 6 imágenes (ajusta a conveniencia) */
+.img1 { top: 20px; left: 20px; }
+.img2 { top: 20px; right: 20px; }
+.img3 { bottom: 20px; left: 20px; }
+.img4 { bottom: 20px; right: 20px; }
+/* Opcional: dos imágenes en el centro vertical a la izquierda/derecha */
+.img5 { top: 50%; left: 0; transform: translateY(-50%); }
+.img6 { top: 50%; right: 0; transform: translateY(-50%); }
+
+/* Contenedor del texto diagonal */
+.text-diagonal {
+  position: relative;
+  max-width: 600px;        /* Controla el ancho del bloque de texto */
+  background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente opcional si tienes un fondo con imágenes */
+  color: #fff;             /* Texto blanco (ajusta según tu theme) */
+  padding: 40px;
+  border-radius: 8px;
+  transform: rotate(-3deg); /* Rotación ligera para el efecto diagonal */
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+/* Ajusta los títulos y párrafos dentro del bloque diagonal */
+.text-diagonal h2 {
+  margin-bottom: 15px;
+  font-size: 2rem;
+}
+
+/* Botón "About Our Philosophy" (puedes reutilizar tu clase .btn .btn-accent existente) */
+.text-diagonal .btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 20px;
+  background: #ff0000;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+.text-diagonal .btn:hover {
+  background: darkred;
+}
+
+/* RESPONSIVE: si quieres que en pantallas pequeñas cambie distribución, ajusta */
+@media (max-width: 768px) {
+  .corner-img {
+    width: 120px;
+    height: 120px;
+  }
+  .text-diagonal {
+    padding: 20px;
+    transform: rotate(-2deg); /* Menos rotación en móvil si lo prefieres */
+  }
+}
+
+/* Modern Hero Section */
+.modern-hero {
+  position: relative;
+  /* Remueve o ajusta la altura fija para que el contenedor
+     se adapte mejor al contenido. Si deseas forzar, puedes dejar height: 80vh;
+     pero asegúrate de tener un padding-bottom para evitar solapes. */
+  min-height: 600px;   /* Altura mínima para pantallas grandes */
+  background-image: url('background.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  /* Añade espacio debajo para no superponerse con la sección "about" */
+  padding-bottom: 40px; 
+}
+
+/* Contenedor principal de las imágenes */
+.modern-hero-container {
+  display: flex;
+  gap: 20px;                 /* Mayor espacio entre imágenes */
+  justify-content: space-evenly; /* Reparte espacio de forma uniforme */
+  align-items: center;
+  max-width: 1300px;
+  width: 100%;
+  margin: 0 auto;
+  /* Asegura algo de altura, para que sea vistoso y las imágenes
+     se ubiquen centradas en el espacio */
+  min-height: 500px;
+}
+
+/* Ajustes generales de las imágenes */
+.modern-hero-img {
+  height: auto;
+  border: 3px solid #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+  /* object-fit: cover;   si deseas que rellenen el contenedor 
+     pero podría recortar. Para ver la imagen completa, usa contain o quítalo */
+}
+
+/* Asigna porcentaje de anchura a cada imagen (desktop) */
+.side-img {
+  flex: 0 0 25%;    /* Ocupa 25% del ancho para cada imagen lateral */
+  max-height: 500px; /* Ajusta la altura máxima */
+  object-fit: cover;  /* Recortará si la imagen no se ajusta en la proporción */
+}
+
+.center-img {
+  flex: 0 0 50%;    /* La imagen central ocupa el 50% del ancho */
+  max-height: 500px;
+  object-fit: cover;
+}
+
+/* Demora en la animación según el orden */
+.modern-hero-img:nth-child(1) { animation-delay: 0.2s; }
+.modern-hero-img:nth-child(2) { animation-delay: 0.4s; }
+.modern-hero-img:nth-child(3) { animation-delay: 0.6s; }
+
+/* Animación fade in */
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+/* Hover */
+.modern-hero-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+/* Vista móvil: apila las imágenes */
+@media (max-width: 768px) {
+  .modern-hero {
+    min-height: auto;  /* Permite que crezca según el contenido */
+    height: auto;      /* Elimina restricciones de altura en móvil */
+    padding-bottom: 40px; /* Espacio inferior para separar de la sección siguiente */
+  }
+
+  .modern-hero-container {
+    flex-direction: column; 
+    gap: 15px;         /* Un poco de espacio entre las imágenes */
+    min-height: auto;  /* Evita forzar altura */
+  }
+
+  .side-img, .center-img {
+    flex: 0 0 auto;    /* Quita el tamaño fijo en % */
+    width: 90%;        /* Un ancho más razonable en móvil */
+    max-width: 400px;  /* Limita el ancho máximo si deseas */
+    max-height: none;
+    margin: 0 auto;    /* Centra cada imagen */
+    object-fit: contain;  /* Para que no recorte nada en móvil */
+  }
+}
+
+
+/* ADVANTAGES / FEATURES SECTION */
+.academy-features {
+  background: #0f1419;  /* Fondo oscuro (ajusta según tu tema) */
+  padding: 60px 20px;
+  color: #fff;          /* Texto blanco */
+}
+
+/* Contenedor de columnas */
+.features-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  
+  /* Usa grid o flex para organizar las 4 columnas */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+/* Cada "caja" o columna */
+.feature-box {
+  background: #1b1f23;   /* Un tono ligeramente diferente para resaltar */
+  border-radius: 8px;
+  padding: 30px 20px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+.feature-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+
+/* Círculo que contiene el número */
+.feature-circle {
+  width: 42px;
+  height: 42px;
+  background: #ff0000; /* Ajusta al color de acento que prefieras */
+  color: #fff;
+  border-radius: 50%;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px auto; /* Centrado horizontal y espacio inferior */
+}
+
+/* Título */
+.feature-box h5 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+/* Descripción */
+.feature-box p {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #ccc;
+}
+
+/* RESPONSIVE: si deseas ajustar en móvil */
+@media (max-width: 768px) {
+  .feature-box {
+    padding: 20px;
+  }
+  .feature-circle {
+    margin-bottom: 12px;
+  }
+  .feature-box h5 {
+    margin-bottom: 8px;
+  }
+}
+
+
+
+/*********************************
+  PROGRAMS SECTION
+**********************************/
+.programs-section {
+  background-color: #0F1015; /* Ajusta el fondo como en tu diseño */
+  padding: 60px 20px;
+}
+
+/* Grid de tarjetas */
+.programs-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+/* Tarjeta contenedora */
+.program-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #2a2e37;
+  border-radius: 6px;
+  background-color: #13151b;
+  color: #fff;
+  overflow: hidden;
+}
+
+/*********************************
+  PARTE SUPERIOR: CANCHA EN SVG
+**********************************/
+.pitch-shape {
+  width: 100%;
+  background: #13151b;
+  text-align: center;
+  padding: 10px 0; /* Espacio vertical */
+}
+
+/* Ajusta el tamaño del SVG (alto de la "cancha") */
+.pitch-shape svg {
+  width: 60%;
+  max-width: 120px; /* Ancho máximo para pantallas grandes */
+  height: auto;
+}
+
+/*********************************
+  CONTENIDO TEXTUAL DE LA TARJETA
+**********************************/
+.card-content {
+  flex: 1; /* Ocupa el espacio disponible hasta el footer */
+  padding: 10px 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+}
+
+.icon-user {
+  font-size: 1.2rem;
+}
+
+.card-age {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.card-title {
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin: 0;
+}
+
+.green-text {
+  color: #28a745; /* Verdes para destacar (ajusta a tu gusto) */
+}
+
+.card-subtitle {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.card-subtitle2 {
+  font-size: 0.85rem;
+  color: #aaa;
+  margin: 0;
+}
+
+.card-description {
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: #ccc;
+  margin-top: 4px;
+  margin-bottom: auto; /* Empuja el footer al final */
+}
+
+/*********************************
+  BARRA INFERIOR (FOOTER) VERDE
+**********************************/
+.card-footer {
+  width: 100%;
+  background: #28a745; /* Barra verde */
+  display: flex;
+  gap: 8px;
   justify-content: center;
   align-items: center;
+  padding: 10px;
 }
 
-.modal {
-  background: #fff;
-  padding: 20px;
-  max-width: 400px;
-  width: 90%;
-  border-radius: 4px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-}
-
-.modal-close {
-  float: right;
+/* Botones en la barra inferior (negros) */
+.footer-btn {
+  background: #000; 
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
   cursor: pointer;
-  font-size: 1.5rem;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.footer-btn:hover {
+  background: #2a2e37; /* Gris oscuro al hacer hover */
+}
+
+/*********************************
+  RESPONSIVE AJUSTES
+**********************************/
+@media (max-width: 480px) {
+  .card-content {
+    padding: 10px;
+  }
+  .pitch-shape svg {
+    width: 80px; /* Ajuste para móvil */
+  }
+  .card-title {
+    font-size: 0.95rem;
+  }
+  .card-subtitle {
+    font-size: 0.85rem;
+  }
 }
